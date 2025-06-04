@@ -1,185 +1,121 @@
 <!DOCTYPE html>
 <html lang="sq">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Real Estate Calculator</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
-        h1 { text-align: center; }
-        .container { max-width: 900px; margin: auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 8px #ccc; }
-        .section { margin-bottom: 30px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input[type="number"] { width: 100%; padding: 6px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
-        .row { display: flex; gap: 20px; }
-        .col { flex: 1; }
-        button { background: #ffb300; color: #222; border: none; padding: 12px 30px; border-radius: 5px; font-size: 1.1em; cursor: pointer; }
-        button:hover { background: #ffa000; }
-        .result { background: #f1f8e9; padding: 15px; border-radius: 6px; margin-top: 10px; }
-        .emoji { font-size: 3em; text-align: center; }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Real Estate Calculator</h1>
-        <form id="calcForm" autocomplete="off" onsubmit="return false;">
-            <div class="section">
-                <h2>Investimi</h2>
-                <div class="row">
-                    <div class="col">
-                        <label for="vlera_prones">Vlera e çmimit të pronës (€)</label>
-                        <input type="number" id="vlera_prones" value="0" min="0">
-                        <label for="shpenzime_cmim">Shpenzimet e përfshira në çmim (€)</label>
-                        <input type="number" id="shpenzime_cmim" value="0" min="0">
-                        <label for="vete_kapital">Vlera Vetëkapital (€)</label>
-                        <input type="number" id="vete_kapital" value="0" min="0">
-                    </div>
-                </div>
+      <h1>Real Estate Calculator</h1>
+      <form id="calcForm" autocomplete="off" onsubmit="return false;">
+        <!-- Investimi -->
+        <div class="section">
+          <h2>Investimi</h2>
+          <div class="row">
+            <div class="col">
+              <label for="vlera_prones">Vlera e blerjes (€)</label>
+              <input type="number" id="vlera_prones" value="0" min="0" />
+              <label for="shpenzime_cmim">Shpenzime të tjera (€)</label>
+              <input type="number" id="shpenzime_cmim" value="0" min="0" />
+              <label for="viti_blerjes">Viti i blerjes</label>
+              <input type="number" id="viti_blerjes" value="2024" min="1900" />
             </div>
-            <div class="section">
-                <h2>Kredia</h2>
-                <div class="row">
-                    <div class="col">
-                        <label for="vlera_kredise">Vlera e kredisë për pronën (€)</label>
-                        <input type="number" id="vlera_kredise" value="0" min="0">
-                        <label for="afati_kredise">Afati i kredisë në vite</label>
-                        <input type="number" id="afati_kredise" value="0" min="0">
-                        <label for="interesi_vjetor">Interesi vjetor (%)</label>
-                        <input type="number" id="interesi_vjetor" value="0" min="0" step="0.01">
-                        <label for="shpenzime_vjetore_kredi">Shpenzimet vjetore të kredisë (€)</label>
-                        <input type="number" id="shpenzime_vjetore_kredi" value="0" min="0">
-                    </div>
-                </div>
+          </div>
+        </div>
+
+        <!-- Kredia -->
+        <div class="section">
+          <h2>Kredia</h2>
+          <div class="row">
+            <div class="col">
+              <label for="vlera_kredise">Vlera e kredisë (€)</label>
+              <input type="number" id="vlera_kredise" value="0" min="0" />
+              <label for="afati_kredise">Afati në vite</label>
+              <input type="number" id="afati_kredise" value="0" min="0" />
+              <label for="interesi_vjetor">Interesi vjetor (%)</label>
+              <input
+                type="number"
+                id="interesi_vjetor"
+                value="0"
+                min="0"
+                step="0.01"
+              />
+              <label for="shpenzime_vjetore_kredi"
+                >Shpenzime të tjera (€)</label
+              >
+              <input
+                type="number"
+                id="shpenzime_vjetore_kredi"
+                value="0"
+                min="0"
+              />
             </div>
-            <div class="section">
-                <h2>Fitime nga qiraja</h2>
-                <div class="row">
-                    <div class="col">
-                        <label for="qira_mujore_bruto">Vlera e qirasë mujore bruto (€)</label>
-                        <input type="number" id="qira_mujore_bruto" value="0" min="0">
-                        <label for="perqindja_mbushjes">Përqindja e mbushjes së qirasë (%)</label>
-                        <input type="number" id="perqindja_mbushjes" value="0" min="0" max="100">
-                        <label for="shpenzime_vjetore_qira">Shpenzimet vjetore të qirasë (€)</label>
-                        <input type="number" id="shpenzime_vjetore_qira" value="0" min="0">
-                        <label for="shpenzime_vjetore_prone">Shpenzimet vjetore të pronës (€)</label>
-                        <input type="number" id="shpenzime_vjetore_prone" value="0" min="0">
-                    </div>
-                </div>
+          </div>
+        </div>
+
+        <!-- Fitime nga Qiraja -->
+        <div class="section">
+          <h2>Fitime nga Qiraja</h2>
+          <div class="row">
+            <div class="col">
+              <label for="qira_mujore_bruto">Qiraja mujore bruto (€)</label>
+              <input type="number" id="qira_mujore_bruto" value="0" min="0" />
+              <label for="periudha_qerase">Periudha e qerasë (muaj)</label>
+              <input type="number" id="periudha_qerase" value="0" min="0" />
+              <label for="shpenzime_vjetore_qira">Shpenzime të tjera (€)</label>
+              <input
+                type="number"
+                id="shpenzime_vjetore_qira"
+                value="0"
+                min="0"
+              />
+              <label for="shpenzime_vjetore_prone"
+                >Shpenzime mirëmbajtjeje (€)</label
+              >
+              <input
+                type="number"
+                id="shpenzime_vjetore_prone"
+                value="0"
+                min="0"
+              />
             </div>
-            <div class="section">
-                <h2>Fitime nga shitja</h2>
-                <div class="row">
-                    <div class="col">
-                        <label for="vlera_shitjes">Vlera e shitjes (€)</label>
-                        <input type="number" id="vlera_shitjes" value="0" min="0">
-                        <label for="vsi_shitjes">VSI i shitjes (€)</label>
-                        <input type="number" id="vsi_shitjes" value="0" min="0">
-                        <label for="shpenzime_shitje">Shpenzimet e shitjes (€)</label>
-                        <input type="number" id="shpenzime_shitje" value="0" min="0">
-                    </div>
-                </div>
+          </div>
+        </div>
+
+        <!-- Fitime nga Shitja -->
+        <div class="section">
+          <h2>Fitime nga Shitja</h2>
+          <div class="row">
+            <div class="col">
+              <label for="vlera_shitjes">Vlera e shitjes (€)</label>
+              <input type="number" id="vlera_shitjes" value="0" min="0" />
+              <label for="viti_shitjes">Viti i shitjes</label>
+              <input type="number" id="viti_shitjes" value="2025" min="1900" />
+              <label for="shpenzime_shitje">Shpenzime të tjera (€)</label>
+              <input type="number" id="shpenzime_shitje" value="0" min="0" />
             </div>
-            <div class="section">
-                <h2>Performanca</h2>
-                <div class="section result" id="results" style="display:none;"></div>
-                <button type="button" onclick="calculate()">Llogarit</button>
-            </div>
-            <div class="section">
-                <h2>Prona</h2>
-                <label for="emri_prones">Vendos emrin e prones</label>
-                <input type="text" id="emri_prones" placeholder="Emri i pronës">
-                <button type="button" onclick="saveUrl()">Ruaj</button>
-            </div>
-        </form>
+          </div>
+        </div>
+
+        <!-- Performanca -->
+        <div class="section">
+          <h2>Performanca</h2>
+          <div class="section result" id="results" style="display: none"></div>
+          <button type="button" onclick="calculate()">Llogarit</button>
+        </div>
+
+        <!-- Prona -->
+        <div class="section">
+          <h2>Prona</h2>
+          <label for="emri_prones">Vendosni emrin e pronës</label>
+          <input type="text" id="emri_prones" placeholder="Emri i pronës" />
+          <button type="button" onclick="saveUrl()">Shpërndaj/Kopjo</button>
+        </div>
+      </form>
     </div>
-    <script>
-        function getVal(id) {
-            return parseFloat(document.getElementById(id).value) || 0;
-        }
-        function calculate() {
-            // Input values
-            const vlera_prones = getVal('vlera_prones');
-            const shpenzime_cmim = getVal('shpenzime_cmim');
-            const vete_kapital = getVal('vete_kapital');
-            const vlera_kredise = getVal('vlera_kredise');
-            const afati_kredise = getVal('afati_kredise');
-            const interesi_vjetor = getVal('interesi_vjetor');
-            const shpenzime_vjetore_kredi = getVal('shpenzime_vjetore_kredi');
-            const qira_mujore_bruto = getVal('qira_mujore_bruto');
-            const perqindja_mbushjes = getVal('perqindja_mbushjes');
-            const shpenzime_vjetore_qira = getVal('shpenzime_vjetore_qira');
-            const shpenzime_vjetore_prone = getVal('shpenzime_vjetore_prone');
-            const vlera_shitjes = getVal('vlera_shitjes');
-            const vsi_shitjes = getVal('vsi_shitjes');
-            const shpenzime_shitje = getVal('shpenzime_shitje');
 
-            // Kësti mujor (formula e amortizimit)
-            let kesti_mujor = 0;
-            let totali_interesit = 0;
-            if (vlera_kredise > 0 && interesi_vjetor > 0 && afati_kredise > 0) {
-                const r = interesi_vjetor / 100 / 12;
-                const n = afati_kredise * 12;
-                kesti_mujor = vlera_kredise * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
-                totali_interesit = kesti_mujor * n - vlera_kredise;
-            }
-
-            // Pagesa totale për pronë
-            const pagesa_totale_prone = vlera_kredise + vete_kapital + shpenzime_cmim;
-            // Kosto totale investimi
-            const kosto_totale_investimi = pagesa_totale_prone;
-
-            // Të ardhurat nga qiraja
-            const te_ardhura_vjetore_bruto = qira_mujore_bruto * 12 * (perqindja_mbushjes / 100);
-            const qiraja_neto_vjetore = te_ardhura_vjetore_bruto - shpenzime_vjetore_qira;
-            const fitimi_total_vjetor_qira = qiraja_neto_vjetore - shpenzime_vjetore_prone - shpenzime_vjetore_kredi;
-
-            // Fitimi nga shitja
-            const fitimi_shitjes = vlera_shitjes - vsi_shitjes - shpenzime_shitje - vlera_kredise;
-
-            // Performanca
-            const performanca_vjetore_bruto = kosto_totale_investimi > 0 ? (te_ardhura_vjetore_bruto / kosto_totale_investimi) * 100 : 0;
-            const performanca_vjetore_neto = kosto_totale_investimi > 0 ? (qiraja_neto_vjetore / kosto_totale_investimi) * 100 : 0;
-            const roi_bruto = kosto_totale_investimi > 0 ? ((vlera_shitjes + qiraja_neto_vjetore - kosto_totale_investimi) / kosto_totale_investimi) * 100 : 0;
-            const roi_neto = kosto_totale_investimi > 0 ? ((fitimi_shitjes + qiraja_neto_vjetore - kosto_totale_investimi) / kosto_totale_investimi) * 100 : 0;
-
-            // Show results
-            document.getElementById('results').style.display = 'block';
-            document.getElementById('results').innerHTML = `
-                <b>Kësti mujor:</b> €${kesti_mujor.toFixed(2)}<br>
-                <b>Totali i interesit të kredisë:</b> €${totali_interesit.toFixed(2)}<br>
-                <b>Pagesa totale për pronë:</b> €${pagesa_totale_prone.toFixed(2)}<br>
-                <b>Kosto totale investimi:</b> €${kosto_totale_investimi.toFixed(2)}<br>
-                <b>Të ardhura vjetore bruto nga qiraja:</b> €${te_ardhura_vjetore_bruto.toFixed(2)}<br>
-                <b>Qiraja neto vjetore:</b> €${qiraja_neto_vjetore.toFixed(2)}<br>
-                <b>Fitimi total vjetor nga qiraja:</b> €${fitimi_total_vjetor_qira.toFixed(2)}<br>
-                <b>Fitimi nga shitja:</b> €${fitimi_shitjes.toFixed(2)}<br>
-                <b>Performanca vjetore bruto e qirasë:</b> ${performanca_vjetore_bruto.toFixed(2)}%<br>
-                <b>Performanca vjetore neto e qirasë:</b> ${performanca_vjetore_neto.toFixed(2)}%<br>
-                <b>ROI bruto:</b> ${roi_bruto.toFixed(2)}%<br>
-                <b>ROI neto:</b> ${roi_neto.toFixed(2)}%<br>
-            `;
-        }
-        function saveUrl() {
-            const params = [
-                'vlera_prones','shpenzime_cmim','vete_kapital','vlera_kredise','afati_kredise','interesi_vjetor','shpenzime_vjetore_kredi',
-                'qira_mujore_bruto','perqindja_mbushjes','shpenzime_vjetore_qira','shpenzime_vjetore_prone',
-                'vlera_shitjes','vsi_shitjes','shpenzime_shitje'
-            ];
-            const query = params.map(id => id + '=' + encodeURIComponent(document.getElementById(id).value)).join('&');
-            const url = window.location.origin + window.location.pathname + '?' + query;
-            window.open(url, '_blank');
-        }
-        // If there are query params, fill the form
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            [
-                'vlera_prones','shpenzime_cmim','vete_kapital','vlera_kredise','afati_kredise','interesi_vjetor','shpenzime_vjetore_kredi',
-                'qira_mujore_bruto','perqindja_mbushjes','shpenzime_vjetore_qira','shpenzime_vjetore_prone',
-                'vlera_shitjes','vsi_shitjes','shpenzime_shitje'
-            ].forEach(id => {
-                if(urlParams.has(id)) document.getElementById(id).value = urlParams.get(id);
-            });
-        }
-    </script>
-</body>
-</html> 
+    <script src="script.js"></script>
+  </body>
+</html>
