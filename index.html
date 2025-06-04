@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Real Estate Calculator</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -15,11 +19,47 @@
           <h2>Investimi</h2>
           <div class="row">
             <div class="col">
-              <label for="vlera_prones">Vlera e blerjes (€)</label>
+              <label for="vlera_prones">
+                Vlera e blerjes (€)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">Info: Vlera e çmimit të pronës.</p>
               <input type="number" id="vlera_prones" value="0" min="0" />
-              <label for="shpenzime_cmim">Shpenzime të tjera (€)</label>
+
+              <label for="shpenzime_cmim">
+                Shpenzime të tjera (€)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">
+                Info: Shpenzimet e pa njohura si veprime noteriale etj.
+              </p>
               <input type="number" id="shpenzime_cmim" value="0" min="0" />
-              <label for="viti_blerjes">Viti i blerjes</label>
+
+              <label for="viti_blerjes">
+                Viti i blerjes
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">
+                Info: Vendosni muajin dhe vitin e blerjes së pronës.
+              </p>
               <input type="number" id="viti_blerjes" value="2024" min="1900" />
             </div>
           </div>
@@ -30,11 +70,43 @@
           <h2>Kredia</h2>
           <div class="row">
             <div class="col">
-              <label for="vlera_kredise">Vlera e kredisë (€)</label>
+              <label for="vlera_kredise">
+                Vlera e kredisë (€)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">Info: Vlera e çmimit të pronës.</p>
               <input type="number" id="vlera_kredise" value="0" min="0" />
-              <label for="afati_kredise">Afati në vite</label>
+
+              <label for="afati_kredise">
+                Afati në vite
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">Info: Afati i shlyerjes së kredisë në vjet.</p>
               <input type="number" id="afati_kredise" value="0" min="0" />
-              <label for="interesi_vjetor">Interesi vjetor (%)</label>
+
+              <label for="interesi_vjetor">
+                Interesi vjetor (%)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">Info: Interesi i kredisë.</p>
               <input
                 type="number"
                 id="interesi_vjetor"
@@ -42,9 +114,20 @@
                 min="0"
                 step="0.01"
               />
-              <label for="shpenzime_vjetore_kredi"
-                >Shpenzime të tjera (€)</label
-              >
+
+              <label for="shpenzime_vjetore_kredi">
+                Shpenzime të tjera (€)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">
+                Info: Shpenzimet e pa njohura si kosto veprimesh banke etj.
+              </p>
               <input
                 type="number"
                 id="shpenzime_vjetore_kredi"
@@ -60,20 +143,63 @@
           <h2>Fitime nga Qiraja</h2>
           <div class="row">
             <div class="col">
-              <label for="qira_mujore_bruto">Qiraja mujore bruto (€)</label>
+              <label for="qira_mujore_bruto">
+                Qiraja mujore bruto (€)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">Info: Vlera e qirasë mujore bruto.</p>
               <input type="number" id="qira_mujore_bruto" value="0" min="0" />
-              <label for="periudha_qerase">Periudha e qerasë (muaj)</label>
+
+              <label for="periudha_qerase">
+                Periudha e qerasë në muaj
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">Info: Afati në muaj i dhënies me qera.</p>
               <input type="number" id="periudha_qerase" value="0" min="0" />
-              <label for="shpenzime_vjetore_qira">Shpenzime të tjera (€)</label>
+
+              <label for="shpenzime_vjetore_qira">
+                Shpenzime të tjera (€)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">
+                Info: Shpenzimet e pa njohura si mirëmbajtje prone etj.
+              </p>
               <input
                 type="number"
                 id="shpenzime_vjetore_qira"
                 value="0"
                 min="0"
               />
-              <label for="shpenzime_vjetore_prone"
-                >Shpenzime mirëmbajtjeje (€)</label
-              >
+
+              <label for="shpenzime_vjetore_prone">
+                Shpenzime mirëmbajtjeje (€)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">Info: Qiraja neto pas tatimit të qerasë.</p>
               <input
                 type="number"
                 id="shpenzime_vjetore_prone"
@@ -89,11 +215,47 @@
           <h2>Fitime nga Shitja</h2>
           <div class="row">
             <div class="col">
-              <label for="vlera_shitjes">Vlera e shitjes (€)</label>
+              <label for="vlera_shitjes">
+                Vlera e shitjes (€)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">Info: Vlera e çmimit të shitjes së pronës.</p>
               <input type="number" id="vlera_shitjes" value="0" min="0" />
-              <label for="viti_shitjes">Viti i shitjes</label>
+
+              <label for="viti_shitjes">
+                Viti i shitjes
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">
+                Info: Vendosni muajin dhe vitin e blerjes së pronës.
+              </p>
               <input type="number" id="viti_shitjes" value="2025" min="1900" />
-              <label for="shpenzime_shitje">Shpenzime të tjera (€)</label>
+
+              <label for="shpenzime_shitje">
+                Shpenzime të tjera (€)
+                <button
+                  class="info-button"
+                  type="button"
+                  onclick="toggleInfo(this)"
+                >
+                  <i class="bi bi-info-circle"></i>
+                </button>
+              </label>
+              <p class="info">
+                Info: Shpenzimet e pa njohura si kosto agjenti etj.
+              </p>
               <input type="number" id="shpenzime_shitje" value="0" min="0" />
             </div>
           </div>

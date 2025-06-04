@@ -9,6 +9,13 @@ function perc(val) {
   return isNaN(val) || !isFinite(val) ? 0 : val;
 }
 
+function toggleInfo(button) {
+  const info = button.parentElement.nextElementSibling;
+  if (info && info.classList.contains("info")) {
+    info.style.display = info.style.display === "block" ? "none" : "block";
+  }
+}
+
 function calculate() {
   // INVESTIMI
   const vlera_prones = getVal("vlera_prones");
@@ -91,7 +98,9 @@ function calculate() {
     <b>ROI neto:</b> ${roi_neto.toFixed(2)}%<br>
     <b>Performanca qerase bruto:</b> ${performanca_qerase_bruto.toFixed(2)}%<br>
     <b>Performanca qerase neto:</b> ${performanca_qerase_neto.toFixed(2)}%<br>
-    <b>Performanca vjetore bruto:</b> ${performanca_vjetore_bruto.toFixed(2)}%<br>
+    <b>Performanca vjetore bruto:</b> ${performanca_vjetore_bruto.toFixed(
+      2
+    )}%<br>
     <b>Performanca vjetore neto:</b> ${performanca_vjetore_neto.toFixed(2)}%<br>
   `;
 }
