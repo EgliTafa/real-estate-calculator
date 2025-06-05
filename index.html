@@ -11,233 +11,233 @@
   </head>
   <body>
     <div class="container py-4">
-      <h1 class="text-center mb-4">Real Estate Calculator</h1>
-      <form id="calcForm" autocomplete="off" onsubmit="return false;">
-        <!-- Investimi -->
-        <div class="section mb-4">
-          <h2>Investimi</h2>
-          <div class="row">
-            <div class="col">
-              <label for="vlera_prones" class="form-label">Vlera e blerjes (€)</label>
-              <div class="input-group">
-                <input type="number" id="vlera_prones" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Vlera e çmimit të pronës.">
+      <div class="row">
+        <!-- Left column: Inputs -->
+        <div class="col-md-6">
+          <h2 class="mb-4">Të dhënat hyrëse</h2>
+          <form id="calcForm" autocomplete="off" onsubmit="return false;">
+            <!-- Investimi -->
+            <div class="section">
+              <h4>Investimi</h4>
+              <div class="input-group mb-3">
+                <input type="number" id="vlera_blerjes" class="form-control" placeholder="Vlera e blerjes (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Vlera e çmimit të pronës.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="shpenzime_cmim" class="form-label">Shpenzime të tjera (€)</label>
-              <div class="input-group">
-                <input type="number" id="shpenzime_cmim" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Shpenzimet e pa njohura si veprime noteriale etj.">
+              <div class="input-group mb-3">
+                <input type="number" id="shpenzime_investim" class="form-control" placeholder="Shpenzime të tjera (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Shpenzimet e pa njohura si veprime noteriale etj.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="viti_blerjes" class="form-label">Viti i blerjes</label>
-              <div class="input-group">
-                <input type="number" id="viti_blerjes" class="form-control" value="2024" min="1900" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Vendosni muajin dhe vitin e blerjes së pronës.">
+              <div class="input-group mb-3">
+                <input type="text" id="viti_blerjes" class="form-control" placeholder="Viti i blerjes (Muaj/Vit)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Vendosni muajin dhe vitin e blerjes së pronës.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Kredia -->
-        <div class="section mb-4">
-          <h2>Kredia</h2>
-          <div class="row">
-            <div class="col">
-              <label for="vlera_kredise" class="form-label">Vlera e kredisë (€)</label>
-              <div class="input-group">
-                <input type="number" id="vlera_kredise" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Vlera e çmimit të pronës.">
+            <!-- Kredia -->
+            <div class="section">
+              <h4>Kredia</h4>
+              <div class="input-group mb-3">
+                <input type="number" id="vlera_kredise" class="form-control" placeholder="Vlera e kredisë (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Vlera e çmimit të pronës.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="afati_kredise" class="form-label">Afati në vite</label>
-              <div class="input-group">
-                <input type="number" id="afati_kredise" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Afati i shlyerjes së kredisë në vjet.">
+              <div class="input-group mb-3">
+                <input type="number" id="afati_vite" class="form-control" placeholder="Afati në vite">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Afati i shlyerjes së kredisë në vite.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="interesi_vjetor" class="form-label">Interesi vjetor (%)</label>
-              <div class="input-group">
-                <input type="number" id="interesi_vjetor" class="form-control" value="0" min="0" step="0.01" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Interesi i kredisë.">
+              <div class="input-group mb-3">
+                <input type="number" id="interesi" class="form-control" placeholder="Interesi (%)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Interesi i kredisë.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="shpenzime_vjetore_kredi" class="form-label">Shpenzime të tjera (€)</label>
-              <div class="input-group">
-                <input type="number" id="shpenzime_vjetore_kredi" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Shpenzimet e pa njohura si kosto veprimesh banke etj.">
+              <div class="input-group mb-3">
+                <input type="number" id="shpenzime_kredi" class="form-control" placeholder="Shpenzime të tjera (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Shpenzimet e pa njohura si kosto veprimesh banke etj.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Fitime nga Qiraja -->
-        <div class="section mb-4">
-          <h2>Fitime nga Qiraja</h2>
-          <div class="row">
-            <div class="col">
-              <label for="qira_mujore_bruto" class="form-label">Qiraja mujore bruto (€)</label>
-              <div class="input-group">
-                <input type="number" id="qira_mujore_bruto" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Vlera e qirasë mujore bruto.">
+            <!-- Fitime nga Qeraja -->
+            <div class="section">
+              <h4>Fitime nga Qeraja</h4>
+              <div class="input-group mb-3">
+                <input type="number" id="qeraja_bruto" class="form-control" placeholder="Qeraja mujore bruto (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Vlera e qerasë mujore bruto.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="periudha_qerase" class="form-label">Periudha e qerasë në muaj</label>
-              <div class="input-group">
-                <input type="number" id="periudha_qerase" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Afati në muaj i dhënies me qera.">
+              <div class="input-group mb-3">
+                <input type="number" id="periudha_qerase" class="form-control" placeholder="Periudha e qerasë (muaj)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Afati në muaj i dhënies me qera.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="shpenzime_vjetore_qira" class="form-label">Shpenzime të tjera (€)</label>
-              <div class="input-group">
-                <input type="number" id="shpenzime_vjetore_qira" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Shpenzimet e pa njohura si mirëmbajtje prone etj.">
-                  <i class="bi bi-info-circle"></i>
-                </button>
-              </div>
-
-              <label for="shpenzime_vjetore_prone" class="form-label">Shpenzime mirëmbajtjeje (€)</label>
-              <div class="input-group">
-                <input type="number" id="shpenzime_vjetore_prone" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Qiraja neto pas tatimit të qerasë.">
+              <div class="input-group mb-3">
+                <input type="number" id="shpenzime_qera" class="form-control" placeholder="Shpenzime të tjera (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Shpenzimet e pa njohura si mirëmbajtje prone etj.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Fitime nga Shitja -->
-        <div class="section mb-4">
-          <h2>Fitime nga Shitja</h2>
-          <div class="row">
-            <div class="col">
-              <label for="vlera_shitjes" class="form-label">Vlera e shitjes (€)</label>
-              <div class="input-group">
-                <input type="number" id="vlera_shitjes" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Vlera e çmimit të shitjes së pronës.">
+            <!-- Fitime nga Shitja -->
+            <div class="section">
+              <h4>Fitime nga Shitja</h4>
+              <div class="input-group mb-3">
+                <input type="number" id="vlera_shitjes" class="form-control" placeholder="Vlera e shitjes (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Vlera e çmimit të shitjes së pronës.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="viti_shitjes" class="form-label">Viti i shitjes</label>
-              <div class="input-group">
-                <input type="number" id="viti_shitjes" class="form-control" value="2025" min="1900" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Vendosni muajin dhe vitin e blerjes së pronës.">
+              <div class="input-group mb-3">
+                <input type="text" id="viti_shitjes" class="form-control" placeholder="Viti i shitjes (Muaj/Vit)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Vendosni muajin dhe vitin e shitjes së pronës.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="shpenzime_shitje" class="form-label">Shpenzime të tjera (€)</label>
-              <div class="input-group">
-                <input type="number" id="shpenzime_shitje" class="form-control" value="0" min="0" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Shpenzimet e pa njohura si kosto veprimesh banke etj.">
+              <div class="input-group mb-3">
+                <input type="number" id="shpenzime_shitje" class="form-control" placeholder="Shpenzime të tjera (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Shpenzimet e pa njohura si kosto veprimesh banke etj.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Performanca -->
-        <div class="section mb-4">
-          <h2>Performanca</h2>
-          <div class="row">
-            <div class="col">
-              <label for="performanca_qerase_bruto" class="form-label">Performanca qerase bruto (%)</label>
-              <div class="input-group">
-                <input type="number" id="performanca_qerase_bruto" class="form-control" value="0" min="0" step="0.01" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Performanca qerase bruto.">
+              <div class="input-group mb-3">
+                <input type="number" id="vlera_fituar" class="form-control" placeholder="Vlera e fituar (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Vlera e fituar nga shitja e pronës pas shpenzimeve.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
-
-              <label for="performanca_qerase_neto" class="form-label">Performanca qerase neto (%)</label>
-              <div class="input-group">
-                <input type="number" id="performanca_qerase_neto" class="form-control" value="0" min="0" step="0.01" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Performanca qerase neto.">
-                  <i class="bi bi-info-circle"></i>
-                </button>
-              </div>
-
-              <label for="roi_bruto" class="form-label">ROI bruto (%)</label>
-              <div class="input-group">
-                <input type="number" id="roi_bruto" class="form-control" value="0" min="0" step="0.01" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="ROI bruto.">
-                  <i class="bi bi-info-circle"></i>
-                </button>
-              </div>
-
-              <label for="roi_neto" class="form-label">ROI neto (%)</label>
-              <div class="input-group">
-                <input type="number" id="roi_neto" class="form-control" value="0" min="0" step="0.01" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="ROI neto.">
-                  <i class="bi bi-info-circle"></i>
-                </button>
-              </div>
-
-              <label for="performanca_vjetore_bruto" class="form-label">Performanca vjetore bruto (%)</label>
-              <div class="input-group">
-                <input type="number" id="performanca_vjetore_bruto" class="form-control" value="0" min="0" step="0.01" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Performanca vjetore bruto.">
-                  <i class="bi bi-info-circle"></i>
-                </button>
-              </div>
-
-              <label for="performanca_vjetore_neto" class="form-label">Performanca vjetore neto (%)</label>
-              <div class="input-group">
-                <input type="number" id="performanca_vjetore_neto" class="form-control" value="0" min="0" step="0.01" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Performanca vjetore neto.">
+              <div class="input-group mb-3">
+                <input type="number" id="tatim_fitimi" class="form-control" placeholder="Tatim fitimi (€)">
+                <button class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="right" title="Vlera e tatimit të fitimit nga shitja.">
                   <i class="bi bi-info-circle"></i>
                 </button>
               </div>
             </div>
-          </div>
+            <button type="button" class="btn btn-primary w-100" id="llogaritBtn">Llogarit</button>
+          </form>
         </div>
-
-        <!-- Prona -->
-        <div class="section mb-4">
-          <h2>Prona</h2>
-          <div class="row">
-            <div class="col">
-              <label for="emri_prones" class="form-label">Emri i pronës</label>
-              <div class="input-group">
-                <input type="text" id="emri_prones" class="form-control" value="" />
-                <button class="btn btn-outline-secondary" type="button" data-bs-toggle="tooltip" data-bs-trigger="click" title="Emri i pronës.">
-                  <i class="bi bi-info-circle"></i>
-                </button>
-              </div>
+        <!-- Right column: Results (hidden by default) -->
+        <div class="col-md-6" id="resultsColumn" style="display:none;">
+          <h2 class="mb-4">Rezultatet</h2>
+          <!-- Investimi -->
+          <div class="section">
+            <h4>Investimi</h4>
+            <div class="formula-result">
+              <label>Kosto totale investimi (€)</label>
+              <input type="text" id="kosto_totale_investimi" class="form-control" readonly>
+            </div>
+          </div>
+          <!-- Kredia -->
+          <div class="section">
+            <h4>Kredia</h4>
+            <div class="formula-result">
+              <label>Kësti mujor (€)</label>
+              <input type="text" id="kesti_mujor" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Pagesa totale (€)</label>
+              <input type="text" id="pagesa_totale" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Interesi total (€)</label>
+              <input type="text" id="interesi_total" class="form-control" readonly>
+            </div>
+          </div>
+          <!-- Fitime nga Qeraja -->
+          <div class="section">
+            <h4>Fitime nga Qeraja</h4>
+            <div class="formula-result">
+              <label>Tatim qeraje (€)</label>
+              <input type="text" id="tatim_qeraje" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Qeraja neto (€)</label>
+              <input type="text" id="qeraja_neto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Fitimi total ne vite (€)</label>
+              <input type="text" id="fitimi_total_qeraje" class="form-control" readonly>
+            </div>
+          </div>
+          <!-- Fitime nga Shitja -->
+          <div class="section">
+            <h4>Fitime nga Shitja</h4>
+            <div class="formula-result">
+              <label>Vlera e fituar (€)</label>
+              <input type="text" id="vlera_fituar_shitje" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Tatim fitimi (€)</label>
+              <input type="text" id="tatim_fitimi_shitje" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Fitimi nga shitja neto (€)</label>
+              <input type="text" id="fitimi_shitjes_neto" class="form-control" readonly>
+            </div>
+          </div>
+          <!-- Performanca -->
+          <div class="section">
+            <h4>Performanca</h4>
+            <div class="formula-result">
+              <label>Performanca qerase bruto (%)</label>
+              <input type="text" id="performanca_qerase_bruto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Performanca qerase neto (%)</label>
+              <input type="text" id="performanca_qerase_neto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Fitimi nga shitja bruto (€)</label>
+              <input type="text" id="fitimi_shitja_bruto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Fitimi nga shitja neto (€)</label>
+              <input type="text" id="fitimi_shitja_neto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Performanca shitjes (%)</label>
+              <input type="text" id="performanca_shitjes" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Fitimi total bruto (€)</label>
+              <input type="text" id="fitimi_total_bruto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Fitimi total neto (€)</label>
+              <input type="text" id="fitimi_total_neto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>ROI bruto (%)</label>
+              <input type="text" id="roi_bruto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>ROI neto (%)</label>
+              <input type="text" id="roi_neto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Performanca vjetore bruto (%)</label>
+              <input type="text" id="performanca_vjetore_bruto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Performanca vjetore neto (%)</label>
+              <input type="text" id="performanca_vjetore_neto" class="form-control" readonly>
+            </div>
+            <div class="formula-result">
+              <label>Performanca totale (%)</label>
+              <input type="text" id="performanca_totale" class="form-control" readonly>
             </div>
           </div>
         </div>
-
-        <!-- Results -->
-        <div id="results" class="alert alert-info mt-4" style="display: none;"></div>
-
-        <!-- Buttons -->
-        <div class="d-flex justify-content-between mt-4">
-          <button class="btn btn-primary" onclick="calculate()">Llogarit</button>
-          <button class="btn btn-secondary" onclick="saveUrl()">Shpërndaj/Kopjo</button>
-        </div>
-      </form>
+      </div>
     </div>
 
     <!-- Bootstrap 5 JS Bundle with Popper -->

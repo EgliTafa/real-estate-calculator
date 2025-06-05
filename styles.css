@@ -35,6 +35,21 @@ label {
   color: #666;
   background: none;
 }
+/* Formula Results */
+.formula-result {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.formula-result .form-control {
+  background-color: #fff;
+  font-weight: 500;
+  color: #0d6efd;
+}
+.formula-result .form-control:read-only {
+  cursor: default;
+}
 /* Remove tooltip border and background */
 .tooltip {
   --bs-tooltip-bg: none;
