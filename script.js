@@ -9,12 +9,13 @@ function perc(val) {
   return isNaN(val) || !isFinite(val) ? 0 : val;
 }
 
-function toggleInfo(button) {
-  const info = button.parentElement.nextElementSibling;
-  if (info && info.classList.contains("info")) {
-    info.style.display = info.style.display === "block" ? "none" : "block";
-  }
-}
+// Initialize Bootstrap tooltips
+document.addEventListener('DOMContentLoaded', function() {
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  tooltipTriggerList.map(function(tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+});
 
 function calculate() {
   // INVESTIMI
@@ -98,9 +99,7 @@ function calculate() {
     <b>ROI neto:</b> ${roi_neto.toFixed(2)}%<br>
     <b>Performanca qerase bruto:</b> ${performanca_qerase_bruto.toFixed(2)}%<br>
     <b>Performanca qerase neto:</b> ${performanca_qerase_neto.toFixed(2)}%<br>
-    <b>Performanca vjetore bruto:</b> ${performanca_vjetore_bruto.toFixed(
-      2
-    )}%<br>
+    <b>Performanca vjetore bruto:</b> ${performanca_vjetore_bruto.toFixed(2)}%<br>
     <b>Performanca vjetore neto:</b> ${performanca_vjetore_neto.toFixed(2)}%<br>
   `;
 }

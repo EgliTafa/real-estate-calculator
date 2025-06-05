@@ -22,19 +22,43 @@ label {
   margin-bottom: 5px;
   font-weight: bold;
 }
-input[type="number"] {
-  width: 100%;
-  padding: 6px;
+.input-group {
   margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
-.row {
-  display: flex;
-  gap: 20px;
+.input-group .btn {
+  border: none;
+  background: none;
+  color: #888;
+  padding: 0.375rem 0.75rem;
 }
-.col {
-  flex: 1;
+.input-group .btn:hover {
+  color: #666;
+  background: none;
+}
+/* Remove tooltip border and background */
+.tooltip {
+  --bs-tooltip-bg: none;
+  --bs-tooltip-border-radius: 0;
+}
+.tooltip .tooltip-inner {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: #666;
+  font-size: 0.9em;
+  padding: 0;
+}
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: transparent;
+}
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: transparent;
+}
+.tooltip.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: transparent;
+}
+.tooltip.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: transparent;
 }
 button {
   background: #ffb300;
